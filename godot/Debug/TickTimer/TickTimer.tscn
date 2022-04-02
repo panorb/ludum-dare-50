@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Debug/TickTimer/tick_timer.gd" type="Script" id=1]
+
+[node name="TickTimer" type="Label"]
+margin_right = 40.0
+margin_bottom = 40.0
+text = "15.0"
+script = ExtResource( 1 )
