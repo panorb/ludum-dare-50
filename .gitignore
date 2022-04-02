@@ -1,0 +1,5 @@
+.vscode/
+binaries/
+
+# Ignore conveniently placed shortcuts
+*.lnk
