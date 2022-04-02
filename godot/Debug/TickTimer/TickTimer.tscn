@@ -1,9 +1,11 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Debug/TickTimer/tick_timer.gd" type="Script" id=1]
+[ext_resource path="res://Shared/fira_code_16.tres" type="DynamicFont" id=2]
 
 [node name="TickTimer" type="Label"]
 margin_right = 40.0
 margin_bottom = 40.0
+custom_fonts/font = ExtResource( 2 )
 text = "15.0"
 script = ExtResource( 1 )

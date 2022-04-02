@@ -17,6 +17,8 @@ position = Vector2( 0, 32 )
 position = Vector2( 32, 32 )
 
 [node name="TickTimer" parent="." instance=ExtResource( 4 )]
+margin_left = 8.0
+margin_top = 2.0
 
 [node name="Console" parent="." instance=ExtResource( 6 )]
 
