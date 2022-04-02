@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Levels/level-0.tmx" type="PackedScene" id=1]
+[ext_resource path="res://Levels/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Robot/Robot.tscn" type="PackedScene" id=2]
 [ext_resource path="res://game.gd" type="Script" id=3]
 [ext_resource path="res://Debug/TickTimer/TickTimer.tscn" type="PackedScene" id=4]
@@ -24,3 +24,6 @@ position = Vector2( 32, 32 )
 
 [node name="Tick" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource( 5 )
+
+[connection signal="move_intent" from="Robot" to="." method="_on_Robot_move_intent"]
+[connection signal="command_sent" from="Console" to="." method="_on_Console_command_sent"]
