@@ -14,15 +14,29 @@ func handle_tick():
 	emit_signal("move_intent", target_tile)
 
 func wrap_around(target_tile : Vector2):
-	self.position = (target_tile - (velocity * Vector2(18, 9))) * 32.0
+	self.position = (target_tile - (velocity * Vector2(19, 9))) * 32.0
 
 func movement(target_tile : Vector2):
 	self.position = target_tile * 32.0
 	tween.interpolate_property(sprite, "scale", Vector2(1.05, 1.05), Vector2(1.0, 1.0), 0.5, Tween.TRANS_EXPO)
 	tween.start()
 
-func crash(_target_tile : Vector2):
-	pass
+func respawn(target_tile : Vector2):
+	movement(target_tile)
+	
+	# Look right again
+	velocity = Vector2(1, 0)
+	sprite.rotation_degrees = 0
+	
+	# Alive sprite
+	sprite.frame = 0
+
+func crash(target_tile : Vector2):
+	movement(target_tile - velocity)
+	
+	# Death sprite
+	sprite.rotation_degrees = 0
+	sprite.frame = 1
 
 func execute_command(command : String) -> void:
 	if (command == "up"):

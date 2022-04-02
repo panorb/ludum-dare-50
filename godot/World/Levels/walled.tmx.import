@@ -1,0 +1,22 @@
+[remap]
+
+importer="vnen.tiled_importer"
+type="PackedScene"
+path="res://.import/walled.tmx-919f6bd2113e8efd6c2a58824dbdab50.scn"
+
+[deps]
+
+source_file="res://World/Levels/walled.tmx"
+dest_files=[ "res://.import/walled.tmx-919f6bd2113e8efd6c2a58824dbdab50.scn" ]
+
+[params]
+
+custom_properties=true
+tile_metadata=false
+uv_clip=true
+image_flags=7
+collision_layer=1
+embed_internal_images=false
+save_tiled_properties=false
+add_background=false
+post_import_script=""

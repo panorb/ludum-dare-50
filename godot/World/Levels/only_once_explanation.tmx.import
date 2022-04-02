@@ -2,12 +2,12 @@
 
 importer="vnen.tiled_importer"
 type="PackedScene"
-path="res://.import/empty.tmx-372cdea99dc12cae5977227d71be82ed.scn"
+path="res://.import/only_once_explanation.tmx-24841aa51eadc95a001d2dba6d64f472.scn"
 
 [deps]
 
-source_file="res://Levels/empty.tmx"
-dest_files=[ "res://.import/empty.tmx-372cdea99dc12cae5977227d71be82ed.scn" ]
+source_file="res://World/Levels/only_once_explanation.tmx"
+dest_files=[ "res://.import/only_once_explanation.tmx-24841aa51eadc95a001d2dba6d64f472.scn" ]
 
 [params]
 
