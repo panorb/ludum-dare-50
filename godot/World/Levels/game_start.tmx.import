@@ -1,0 +1,22 @@
+[remap]
+
+importer="vnen.tiled_importer"
+type="PackedScene"
+path="res://.import/game_start.tmx-d372d3d8e234c2ed49c0a394747ed3d1.scn"
+
+[deps]
+
+source_file="res://World/Levels/game_start.tmx"
+dest_files=[ "res://.import/game_start.tmx-d372d3d8e234c2ed49c0a394747ed3d1.scn" ]
+
+[params]
+
+custom_properties=true
+tile_metadata=false
+uv_clip=true
+image_flags=7
+collision_layer=1
+embed_internal_images=false
+save_tiled_properties=false
+add_background=false
+post_import_script=""

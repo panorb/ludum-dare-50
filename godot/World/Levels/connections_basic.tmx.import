@@ -1,0 +1,22 @@
+[remap]
+
+importer="vnen.tiled_importer"
+type="PackedScene"
+path="res://.import/connections_basic.tmx-558348b310e09993f66ea5625e47c00e.scn"
+
+[deps]
+
+source_file="res://World/Levels/connections_basic.tmx"
+dest_files=[ "res://.import/connections_basic.tmx-558348b310e09993f66ea5625e47c00e.scn" ]
+
+[params]
+
+custom_properties=true
+tile_metadata=false
+uv_clip=true
+image_flags=7
+collision_layer=1
+embed_internal_images=false
+save_tiled_properties=false
+add_background=false
+post_import_script=""

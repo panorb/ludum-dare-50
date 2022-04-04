@@ -9,6 +9,9 @@ signal move_intent(target_tile)
 func get_tile_position():
 	return self.transform.get_origin() / 32.0
 
+func is_alive():
+	return sprite.frame == 0
+
 func handle_tick():
 	var target_tile : Vector2 = get_tile_position() + velocity
 	emit_signal("move_intent", target_tile)

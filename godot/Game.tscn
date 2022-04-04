@@ -1,15 +1,17 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://World/World.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Robot/Robot.tscn" type="PackedScene" id=2]
 [ext_resource path="res://game.gd" type="Script" id=3]
 [ext_resource path="res://Debug/TickTimer/TickTimer.tscn" type="PackedScene" id=4]
-[ext_resource path="res://tick.wav" type="AudioStream" id=5]
+[ext_resource path="res://Shared/Sounds/tick.wav" type="AudioStream" id=5]
 [ext_resource path="res://Console/Console.tscn" type="PackedScene" id=6]
-[ext_resource path="res://game-over.wav" type="AudioStream" id=7]
+[ext_resource path="res://Shared/Sounds/game-over.wav" type="AudioStream" id=7]
 [ext_resource path="res://Interface/Countdown/Countdown.tscn" type="PackedScene" id=8]
 [ext_resource path="res://World/sequence_manager.gd" type="Script" id=9]
 [ext_resource path="res://Interface/DialoguePlayer/DialoguePlayer.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Shared/Sounds/respawn.wav" type="AudioStream" id=11]
+[ext_resource path="res://Shared/Sounds/error.wav" type="AudioStream" id=12]
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 3 )
@@ -22,8 +24,6 @@ position = Vector2( 32, 128 )
 [node name="ViewportContainer" type="ViewportContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 608.0
-margin_bottom = 382.0
 
 [node name="Viewport" type="Viewport" parent="ViewportContainer"]
 size = Vector2( 608, 342 )
@@ -52,8 +52,13 @@ stream = ExtResource( 5 )
 [node name="GameOver" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource( 7 )
 
+[node name="Respawn" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 11 )
+
+[node name="Error" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 12 )
+
 [node name="SequenceManager" type="Node" parent="."]
 script = ExtResource( 9 )
 
 [connection signal="move_intent" from="Robot" to="." method="_on_Robot_move_intent"]
-[connection signal="command_sent" from="ViewportContainer/Viewport/Console" to="." method="_on_Console_command_sent"]

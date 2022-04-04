@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Interface/DialoguePlayer/dialogue_player.gd" type="Script" id=1]
+[ext_resource path="res://Interface/DialoguePlayer/enter-symbol.png" type="Texture" id=2]
+[ext_resource path="res://Interface/DialoguePlayer/beep.wav" type="AudioStream" id=3]
+[ext_resource path="res://Interface/DialoguePlayer/computer-scientist.png" type="Texture" id=4]
 
 [node name="DialoguePlayer" type="Control"]
 anchor_right = 1.0
@@ -20,7 +23,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="ColorRect" type="ColorRect" parent="Background"]
-modulate = Color( 0, 0, 0, 0.784314 )
+self_modulate = Color( 0, 0, 0, 0.784314 )
 margin_top = 66.0
 margin_right = 608.0
 margin_bottom = 156.0
@@ -28,12 +31,37 @@ rect_min_size = Vector2( 608, 90 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
+[node name="ContinueIndicator" type="TextureRect" parent="Background/ColorRect"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -20.0
+margin_top = -20.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 2 )
+
 [node name="Control2" type="Control" parent="Background"]
 margin_top = 160.0
 margin_right = 608.0
 margin_bottom = 222.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+
+[node name="Character" type="TextureRect" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -202.0
+margin_top = -109.0
+margin_bottom = 66.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource( 4 )
+
+[node name="Tween" type="Tween" parent="Character"]
 
 [node name="Content" type="VBoxContainer" parent="."]
 anchor_right = 1.0
@@ -60,3 +88,13 @@ margin_right = 608.0
 margin_bottom = 222.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Sounds" type="Node" parent="."]
+
+[node name="Beep" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 3 )
+volume_db = -8.0
+
+[connection signal="finished" from="Sounds/Beep" to="." method="_on_Beep_finished"]

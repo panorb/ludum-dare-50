@@ -1,12 +1,15 @@
 extends Node2D
 
-onready var tween = get_node("Tween")
+signal level_changed
+
 onready var tile_layer = get_node("Tile Layer")
+onready var level_change_sound = get_node("Sounds/LevelChange")
+onready var exit_appear_sound = get_node("Sounds/ExitAppear")
 
 onready var transition_container : Node = get_node("Transitions")
 onready var tile_transition : PackedScene = preload("res://World/TileTransition/TileTransition.tscn")
 
-var current_level := "empty"
+var current_level := "tutorial_empty"
 var available_level_exits : Array = []
 var respawn_point = null
 
@@ -77,30 +80,35 @@ func spawn_transition(x: int, y: int):
 	transition_container.add_child(transition_instance)
 	
 func start_transitions():
+	var i = 0
 	for trans in transition_container.get_children():
 		trans.playing = true
-		yield(get_tree().create_timer(0.00001), "timeout")
+		if i % 5 == 0:
+			yield(get_tree().create_timer(0.00001), "timeout")
+		i += 1
 
 func spawn_exit(robot_pos : Vector2):
 	if not available_level_exits:
 		return
 	
-	var longest_distance = 0.0
-	var longest_exit = available_level_exits[0]
+	var shortest_distance = 9999.0
+	var shortest_exit = available_level_exits[0]
 	
-	# Find exit with longest distance to player
+	# Find exit with shortest distance to player
 	for exit_pos in available_level_exits:
-		if robot_pos.distance_squared_to(exit_pos) > longest_distance:
-			longest_distance = robot_pos.distance_squared_to(exit_pos)
-			longest_exit = exit_pos
+		if robot_pos.distance_squared_to(exit_pos) < shortest_distance:
+			shortest_distance = robot_pos.distance_squared_to(exit_pos)
+			shortest_exit = exit_pos
 	
 	# Spawn the exit with transition
-	if tile_layer.get_cell(longest_exit.x, longest_exit.y) != 4:
-		tile_layer.set_cell(longest_exit.x, longest_exit.y, 4)
-		spawn_transition(longest_exit.x, longest_exit.y)
+	if tile_layer.get_cell(shortest_exit.x, shortest_exit.y) != 4:
+		tile_layer.set_cell(shortest_exit.x, shortest_exit.y, 4)
+		spawn_transition(shortest_exit.x, shortest_exit.y)
 	
 	# Clear the available exits to avoid double spawning
 	available_level_exits.clear()
+	
+	exit_appear_sound.play()
 	
 	# Start the transition
 	start_transitions()
@@ -116,8 +124,7 @@ func load_level(level_name: String, animate := true):
 	var level : Node = load("res://World/Levels/" + level_name + ".tmx").instance()
 	var level_layer : TileMap = level.get_node("Tile Layer")
 	
-	tween.reset_all()
-	
+	var sound_played := false
 	
 	for i in range(19):
 		for j in range(9):
@@ -136,6 +143,10 @@ func load_level(level_name: String, animate := true):
 			
 			# Update level tiles
 			if  current_cell != level_cell:
+				if not sound_played:
+					sound_played = true
+					level_change_sound.play()
+				
 				tile_layer.set_cell(i, j, level_cell)
 				if animate:
 					spawn_transition(i, j)
@@ -143,11 +154,25 @@ func load_level(level_name: String, animate := true):
 	tile_layer.update()
 	start_transitions()
 
-func transition_level(level_name : String, animate := true):
+func transition_level(level_name : String, robot_pos: Vector2, robot_direction: Vector2, animate := true):
 	if (current_level == level_name):
 		return
+	
+	var next_pos = robot_pos + robot_direction
+	# var next_next_pos = robot_pos + 2*robot_direction
+	
+	# Check if safe
+	var level : Node = load("res://World/Levels/" + level_name + ".tmx").instance()
+	var level_layer : TileMap = level.get_node("Tile Layer")
+	
+	var safe_tiles = [-1, 1, 3, 4, 6, 7, 11, 25]
+	
+	if level_layer.get_cell(robot_pos.x, robot_pos.y) in safe_tiles and \
+		level_layer.get_cell(next_pos.x, next_pos.y) in safe_tiles: # and \
+		# level_layer.get_cell(next_next_pos.x, next_next_pos.y) in safe_tiles:
 		
-	load_level(level_name, animate)
+		load_level(level_name, animate)
+		emit_signal("level_changed", level_stats)
 
 func reload_level():
 	load_level(current_level, true)

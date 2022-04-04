@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/tick.wav-71e5bc985969ca7ee55ecdae46a485d9.sample"
+path="res://.import/exit_appear.wav-644efdf76e7f7c566fc7e76dee2a365a.sample"
 
 [deps]
 
-source_file="res://tick.wav"
-dest_files=[ "res://.import/tick.wav-71e5bc985969ca7ee55ecdae46a485d9.sample" ]
+source_file="res://World/exit_appear.wav"
+dest_files=[ "res://.import/exit_appear.wav-644efdf76e7f7c566fc7e76dee2a365a.sample" ]
 
 [params]
 

@@ -1,0 +1,22 @@
+[remap]
+
+importer="vnen.tiled_importer"
+type="PackedScene"
+path="res://.import/ludum_dare_basic.tmx-944cd3ca2a0c1b1a867b63405b68f499.scn"
+
+[deps]
+
+source_file="res://World/Levels/ludum_dare_basic.tmx"
+dest_files=[ "res://.import/ludum_dare_basic.tmx-944cd3ca2a0c1b1a867b63405b68f499.scn" ]
+
+[params]
+
+custom_properties=true
+tile_metadata=false
+uv_clip=true
+image_flags=7
+collision_layer=1
+embed_internal_images=false
+save_tiled_properties=false
+add_background=false
+post_import_script=""

@@ -1,0 +1,22 @@
+[remap]
+
+importer="vnen.tiled_importer"
+type="PackedScene"
+path="res://.import/tutorial_only_once.tmx-8efe40ee61363236b17e09be3e5038d7.scn"
+
+[deps]
+
+source_file="res://World/Levels/tutorial_only_once.tmx"
+dest_files=[ "res://.import/tutorial_only_once.tmx-8efe40ee61363236b17e09be3e5038d7.scn" ]
+
+[params]
+
+custom_properties=true
+tile_metadata=false
+uv_clip=true
+image_flags=7
+collision_layer=1
+embed_internal_images=false
+save_tiled_properties=false
+add_background=false
+post_import_script=""

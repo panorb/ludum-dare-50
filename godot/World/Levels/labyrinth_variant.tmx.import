@@ -1,0 +1,22 @@
+[remap]
+
+importer="vnen.tiled_importer"
+type="PackedScene"
+path="res://.import/labyrinth_variant.tmx-b909f697b167230b6237f7fabb8937d4.scn"
+
+[deps]
+
+source_file="res://World/Levels/labyrinth_variant.tmx"
+dest_files=[ "res://.import/labyrinth_variant.tmx-b909f697b167230b6237f7fabb8937d4.scn" ]
+
+[params]
+
+custom_properties=true
+tile_metadata=false
+uv_clip=true
+image_flags=7
+collision_layer=1
+embed_internal_images=false
+save_tiled_properties=false
+add_background=false
+post_import_script=""

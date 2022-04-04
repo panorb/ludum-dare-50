@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Interface/Countdown/countdown.gd" type="Script" id=1]
 [ext_resource path="res://Console/FiraCode-Retina.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Shared/Sounds/countdown.wav" type="AudioStream" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 34
@@ -92,3 +93,10 @@ margin_right = 358.0
 margin_bottom = 147.0
 custom_fonts/font = SubResource( 4 )
 text = "GO!"
+
+[node name="Sounds" type="Node" parent="."]
+
+[node name="Countdown" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 3 )
+
+[node name="Tween" type="Tween" parent="."]

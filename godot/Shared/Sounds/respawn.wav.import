@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/game-over.wav-9f590cf472adb37186980d0dfe6b454e.sample"
+path="res://.import/respawn.wav-f1ef3aa37838d0e53ebf5f68c13f53e5.sample"
 
 [deps]
 
-source_file="res://game-over.wav"
-dest_files=[ "res://.import/game-over.wav-9f590cf472adb37186980d0dfe6b454e.sample" ]
+source_file="res://Shared/Sounds/respawn.wav"
+dest_files=[ "res://.import/respawn.wav-f1ef3aa37838d0e53ebf5f68c13f53e5.sample" ]
 
 [params]
 

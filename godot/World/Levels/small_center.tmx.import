@@ -1,0 +1,22 @@
+[remap]
+
+importer="vnen.tiled_importer"
+type="PackedScene"
+path="res://.import/small_center.tmx-2bd6d51195535c86f1ebd90b186d1f13.scn"
+
+[deps]
+
+source_file="res://World/Levels/small_center.tmx"
+dest_files=[ "res://.import/small_center.tmx-2bd6d51195535c86f1ebd90b186d1f13.scn" ]
+
+[params]
+
+custom_properties=true
+tile_metadata=false
+uv_clip=true
+image_flags=7
+collision_layer=1
+embed_internal_images=false
+save_tiled_properties=false
+add_background=false
+post_import_script=""

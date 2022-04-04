@@ -2,12 +2,12 @@
 
 importer="vnen.tiled_importer"
 type="PackedScene"
-path="res://.import/walled.tmx-919f6bd2113e8efd6c2a58824dbdab50.scn"
+path="res://.import/cross_target.tmx-ed7f63815dae369da2724aa7f5d5475c.scn"
 
 [deps]
 
-source_file="res://World/Levels/walled.tmx"
-dest_files=[ "res://.import/walled.tmx-919f6bd2113e8efd6c2a58824dbdab50.scn" ]
+source_file="res://World/Levels/cross_target.tmx"
+dest_files=[ "res://.import/cross_target.tmx-ed7f63815dae369da2724aa7f5d5475c.scn" ]
 
 [params]
 

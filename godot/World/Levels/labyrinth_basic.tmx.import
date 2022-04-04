@@ -2,12 +2,12 @@
 
 importer="vnen.tiled_importer"
 type="PackedScene"
-path="res://.import/wrap_around_explanation.tmx-5b8b18be61e8ff749ab8f3b97ceabfce.scn"
+path="res://.import/labyrinth_basic.tmx-159f5b79a24cb9bd0a7973e232413c71.scn"
 
 [deps]
 
-source_file="res://World/Levels/wrap_around_explanation.tmx"
-dest_files=[ "res://.import/wrap_around_explanation.tmx-5b8b18be61e8ff749ab8f3b97ceabfce.scn" ]
+source_file="res://World/Levels/labyrinth_basic.tmx"
+dest_files=[ "res://.import/labyrinth_basic.tmx-159f5b79a24cb9bd0a7973e232413c71.scn" ]
 
 [params]
 
